@@ -3,6 +3,9 @@
     <x-slot:title>
         Guest List   
         </x-slot>
+        <div class="alert alert-light">
+            <a href="/create_guest">Create a new Guest list</a>
+        </div>
         <div class="container">
             <h2>All guest Lists</h2>
             <div class="row">
