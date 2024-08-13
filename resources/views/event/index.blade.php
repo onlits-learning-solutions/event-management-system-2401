@@ -13,6 +13,7 @@
                 <th>Date</th>
                 <th>Type</th>
                 <th>Organiser</th>
+                <th>Actions</th>
             </tr>
             @foreach($events as $event)
             <tr>
@@ -21,6 +22,9 @@
                 <td>{{ $event->date }}</td>
                 <td>{{ $event->type }}</td>
                 <td>{{ $event->organiser }}</td>
+                <td>
+                    <a href="/events/show/{{ $event->id }}" class="btn btn-primary">Details</a>
+                </td>
             </tr>
             @endforeach
         </table>

@@ -3,14 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Contracts\View\Factory;
 
 class EventController extends Controller
 {
     public function index()
     {
         $events = Event::all();
-        return view('event/index',['events' => $events]);
+        return view('event/index', ['events' => $events]);
     }
 
     public function create()
@@ -29,9 +31,10 @@ class EventController extends Controller
         return redirect('/events');
     }
 
-    public function show()
+    public function show(int $id)
     {
-        return view('event/show');
+        $event = Event::find($id);
+        return view('event/show',['event' => $event]);
     }
 
     public function edit()
@@ -39,13 +42,7 @@ class EventController extends Controller
         return view('event/edit');
     }
 
-    public function update()
-    {
+    public function update() {}
 
-    }
-
-    public function destroy()
-    {
-
-    }
+    public function destroy() {}
 }

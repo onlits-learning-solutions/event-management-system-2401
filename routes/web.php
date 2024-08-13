@@ -30,4 +30,5 @@ Route::post('/store',[Guest_ListController::class,'store'])->name('store.guest')
 Route::get('/events', [EventController::class, 'index']);
 Route::get('/events/create', [EventController::class, 'create']);
 Route::post('/events', [EventController::class, 'store']);
+Route::get('/events/show/{id}', [EventController::class, 'show']);
 
