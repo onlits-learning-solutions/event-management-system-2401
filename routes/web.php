@@ -25,6 +25,10 @@ Route::get('/', function () {
 Route::get('/guest_list',[Guest_ListController::class,'guest_list'])->name('guest_list.all');
 Route::get('/create_guest',[Guest_ListController::class,'create'])->name('create.guest');
 Route::post('/store',[Guest_ListController::class,'store'])->name('store.guest');
+Route::get('/guest_details/{id}',[Guest_ListController::class,'show'])->name('guest_details');
+Route::get('/guest_edit/{id}',[Guest_ListController::class,'edit'])->name('guest_edit');
+Route::post('/guest_update',[Guest_ListController::class,'update'])->name('guest_update');
+Route::get('/guest_delete/{id}',[Guest_ListController::class,'delete'])->name('guest_delete');
 
 
 Route::get('/events', [EventController::class, 'index']);
